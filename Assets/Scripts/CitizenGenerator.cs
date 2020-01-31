@@ -13,7 +13,7 @@ public class CitizenGenerator : MonoBehaviour
         {
             for (float j = 0; j < citizentsCount; j+=2)
             {
-                Instantiate(myPrefab, new Vector3(i + Random.Range(0f, 1f), transform.position.y, j + Random.Range(0f, 1f)), Quaternion.identity);
+                Instantiate(myPrefab, new Vector3(transform.position.x + i + Random.Range(0f, 1f), transform.position.y, transform.position.z + j + Random.Range(0f, 1f)), Quaternion.identity);
             }
         }
     }
