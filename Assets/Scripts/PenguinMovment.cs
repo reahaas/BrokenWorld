@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,11 +17,28 @@ public class PenguinMovment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 vel;
-
-        vel = Random.insideUnitSphere * speed;
-        vel.y = 0f;
-        transform.Translate(vel * Time.deltaTime);
+        
+        ControllPenguin();
 
     }
+
+    void ControllPenguin()
+    {
+
+        int smallRotate = UnityEngine.Random.Range(-1, 2);
+
+        transform.Rotate(0, smallRotate, 0);
+
+        transform.Translate(Vector3.left * Time.deltaTime);
+
+
+
+        float singleStep = speed * Time.deltaTime;
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, Vector3.zero, singleStep, 0f);
+
+        transform.rotation = Quaternion.LookRotation(newDirection);
+
+    }
+
+
 }
