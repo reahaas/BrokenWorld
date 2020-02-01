@@ -9,21 +9,17 @@ public class EnemyMovment : MonoBehaviour
 
 
 
-    // Start is called before the first frame update
     void Start()
     {
-        transform.rotation = Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up);
+        transform.rotation = Quaternion.AngleAxis(Random.Range(90, 120), Vector3.up);
         this.anim.SetTrigger("walk");
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (GetComponent<OVRGrabbable>().isGrabbed)
             return;
-   //     float currentengle = transform.rotation.eulerAngles.y;
-   //     transform.rotation = Quaternion.AngleAxis(Random.Range(currentengle -1, currentengle +2), Vector3.up);
+
         transform.Translate(Vector3.forward * Time.deltaTime);
-        
     }
 }
