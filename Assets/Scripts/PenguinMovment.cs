@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PenguinMovment : MonoBehaviour
 {
-    public GameObject penguin;
     public float speed = 10f;
 
     // Start is called before the first frame update
@@ -17,14 +16,15 @@ public class PenguinMovment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (GetComponent<OVRGrabbable>().isGrabbed)
+            return;
         ControllPenguin();
 
     }
 
     void ControllPenguin()
     {
-
+        
         int smallRotate = UnityEngine.Random.Range(-1, 2);
 
         transform.Rotate(0, smallRotate, 0);
