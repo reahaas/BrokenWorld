@@ -2,6 +2,7 @@
 
 public class DestroyPenguinIfTooFar : MonoBehaviour
 {
+    public float distance;
     private Vector3 startPosition;
 
     private void Start()
@@ -13,7 +14,7 @@ public class DestroyPenguinIfTooFar : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(startPosition, transform.position) > 10)
+        if (Vector3.Distance(startPosition, transform.position) > distance)
             Destroy(gameObject);
 
     }
