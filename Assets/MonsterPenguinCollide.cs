@@ -35,6 +35,7 @@ public class MonsterPenguinCollide : MonoBehaviour
             GetComponent<AudioSource>().Play();
             Instantiate(explosionPrefab, position, rotation);
             Destroy(gameObject);
+            Destroy(collision.collider);
         }
     }
 
@@ -43,7 +44,7 @@ public class MonsterPenguinCollide : MonoBehaviour
         for (int i = 0; i < badGuyNames.Count; i++)
         {
             String badDude = badGuyNames[i].ToString();
-            if (bumpIntoName.ToLower().Contains(badDude))
+            if (bumpIntoName.ToLower().Contains(badDude.ToLower()))
                 return true;
         }
 
