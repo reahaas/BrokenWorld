@@ -32,11 +32,24 @@ public class MonsterPenguinCollide : MonoBehaviour
             Quaternion rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
             Vector3 position = contact.point;
 
-            GetComponent<AudioSource>().Play();
+            var clip = GetComponent<AudioSource>().clip;
+            PlaySound(clip);
+
             Instantiate(explosionPrefab, position, rotation);
-            Destroy(gameObject);
             Destroy(collision.collider);
+            Destroy(gameObject);
+            Destroy(explosionPrefab, 2.0f);
         }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        var soundEntity = new GameObject("ExplosionSound");
+        var audioSource = soundEntity.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.clip = clip;
+        audioSource.Play();
+        Destroy(soundEntity, clip.length + 1.0f);
     }
 
     private bool isBadGuy(string bumpIntoName)
