@@ -13,7 +13,11 @@ public class EnemyGenerator : MonoBehaviour
         {
             for (float j = 0; j < Count; j+=0.9f)
             {
-                Instantiate(myPrefab, new Vector3(transform.position.x + i + Random.Range(0f, randomRange), transform.position.y, transform.position.z + j + Random.Range(0f, randomRange)), Quaternion.identity);
+                Instantiate(myPrefab, new Vector3(
+                    transform.position.x + i + Random.Range(0f, randomRange),
+                    transform.position.y,
+                    transform.position.z + j + Random.Range(0f, randomRange)),
+                    Quaternion.identity);
             }
         }
     }
