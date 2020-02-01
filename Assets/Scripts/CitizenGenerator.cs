@@ -19,8 +19,6 @@ public class CitizenGenerator : MonoBehaviour
                     Quaternion.identity).GetComponent<PenguinMovment>();
                 temp.SetLookAt(lookAt);
 
-                temp.transform.rotation = Quaternion.FromToRotation(Vector3.up, transform.forward);
-
                 PenguinCounter.count += 1;
 
             }
