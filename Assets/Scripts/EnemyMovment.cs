@@ -19,6 +19,8 @@ public class EnemyMovment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GetComponent<OVRGrabbable>().isGrabbed)
+            return;
         float currentengle = transform.rotation.eulerAngles.y;
         transform.rotation = Quaternion.AngleAxis(Random.Range(currentengle -1, currentengle +2), Vector3.up);
         transform.Translate(Vector3.forward * Time.deltaTime);
