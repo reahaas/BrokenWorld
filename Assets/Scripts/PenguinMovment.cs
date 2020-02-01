@@ -6,10 +6,6 @@ using UnityEngine;
 public class PenguinMovment : MonoBehaviour
 {
     public GameObject penguin;
-    //public Animation run;
-    //public Animation walk;
-
-
     public float speed = 10f;
     private GameObject _lookAt;
     private Boolean isMoveToCenter = false;
@@ -29,13 +25,15 @@ public class PenguinMovment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (GetComponent<OVRGrabbable>().isGrabbed)
+            return;
         ControllPenguin();
 
     }
 
     void ControllPenguin()
     {
+<<<<<<< HEAD
         time += Time.deltaTime;
 
         if(time > movmentInterval)
@@ -44,6 +42,11 @@ public class PenguinMovment : MonoBehaviour
             time = UnityEngine.Random.Range(3f, 5f);
             
         }
+=======
+        
+        int smallRo
+        tate = UnityEngine.Random.Range(-1, 2);
+>>>>>>> master
 
         float added = 0;
         float returnHomeBios = Vector3.Distance(transform.position, Vector3.zero);
