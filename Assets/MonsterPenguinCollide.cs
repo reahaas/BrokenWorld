@@ -35,10 +35,10 @@ public class MonsterPenguinCollide : MonoBehaviour
             var clip = GetComponent<AudioSource>().clip;
             PlaySound(clip);
 
-            Instantiate(explosionPrefab, position, rotation);
-            Destroy(collision.collider);
+            var explosion = Instantiate(explosionPrefab, position, rotation);
+            Destroy(collision.collider.gameObject);
             Destroy(gameObject);
-            Destroy(explosionPrefab, 2.0f);
+            Destroy(explosion.gameObject, 2.0f);
         }
     }
 

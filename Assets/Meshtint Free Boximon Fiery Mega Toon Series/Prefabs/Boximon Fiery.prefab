@@ -1063,9 +1063,9 @@ GameObject:
   - component: {fileID: 4744222756475520}
   - component: {fileID: 95206688057043068}
   - component: {fileID: -325017902251567443}
-  - component: {fileID: 1379765991841800255}
   - component: {fileID: -9094613485166965524}
-  - component: {fileID: 2106533538310744892}
+  - component: {fileID: 3335722417560360462}
+  - component: {fileID: -6165858591273326929}
   m_Layer: 0
   m_Name: Boximon Fiery
   m_TagString: Untagged
@@ -1135,19 +1135,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!65 &1379765991841800255
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975194375736644}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.1279984, z: 0.66399753}
-  m_Center: {x: 0, y: 0.5484028, z: -0.0061895847}
 --- !u!114 &-9094613485166965524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1165,7 +1152,21 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
---- !u!114 &2106533538310744892
+--- !u!136 &3335722417560360462
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975194375736644}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.61
+  m_Height: 1.4457165
+  m_Direction: 1
+  m_Center: {x: 0.033643603, y: 0.6953394, z: 0}
+--- !u!114 &-6165858591273326929
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1177,8 +1178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f01a4b282cfbd4d8e9008abd4d88c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
-  anim: {fileID: 0}
+  speed: 2
 --- !u!1 &1992369794795074
 GameObject:
   m_ObjectHideFlags: 0
